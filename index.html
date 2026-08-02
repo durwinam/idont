@@ -151,66 +151,93 @@
       --stat-lime-bg: rgba(101, 163, 13, 0.10);
     }
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+   * {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    html,
-    body {
-      min-height: 97%;
-    }
+html,
+body {
+  min-height: 97%;
+}
 
-    body {
-      margin: 0;
-      min-height: 100dvh;
-      padding:
-        max(38px, env(safe-area-inset-top))
-        26px
-        var(--page-bottom);
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 16% 0%, rgba(110, 150, 255, 0.11), transparent 30%),
-        radial-gradient(circle at 84% 8%, rgba(255, 255, 255, 0.045), transparent 26%),
-        linear-gradient(165deg, #020308 0%, #F472B6 54%, #03040a 100%);
-      font-family: Vazirmatn, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+body {
+  margin: 0;
+  min-height: 100dvh;
+  padding:
+    max(38px, env(safe-area-inset-top))
+    26px
+    var(--page-bottom);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 16% 0%, rgba(0, 229, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 84% 8%, rgba(124, 58, 237, 0.16), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.12), transparent 45%),
+    linear-gradient(
+      165deg,
+      #020308 0%,
+      #0B1020 22%,
+      #1E1B4B 45%,
+      #5B21B6 68%,
+      #00E5FF 88%,
+      #020308 100%
+    );
+  font-family: Vazirmatn, -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
 
-    html[dir="rtl"] body {
-      text-align: right;
-    }
+html[dir="rtl"] body {
+  text-align: right;
+}
 
-    html[dir="ltr"] body {
-      text-align: left;
-    }
+html[dir="ltr"] body {
+  text-align: left;
+}
 
-    html[data-theme="light"] body {
-      background:
-        radial-gradient(circle at 12% 0%, rgba(107, 184, 240, 0.12), transparent 34%),
-        radial-gradient(circle at 88% 6%, rgba(255, 255, 245, 0.71), transparent 32%),
-        linear-gradient(165deg, #ffffff 0%, #A78BFA 52%, #8B5CF6 100%, #F472B6 71%);
-    }
+html[data-theme="light"] body {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(0, 229, 255, 0.12), transparent 34%),
+    radial-gradient(circle at 88% 6%, rgba(255, 255, 255, 0.75), transparent 32%),
+    linear-gradient(
+      165deg,
+      #ffffff 0%,
+      #E0F2FE 25%,
+      #C4B5FD 55%,
+      #7DD3FC 78%,
+      #A78BFA 100%
+    );
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      opacity: 0.55;
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
-      background-size: 44px 44px;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
 
-    html[data-theme="light"] body::before {
-      background:
-        linear-gradient(rgba(12, 24, 48, 0.028) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(12, 24, 48, 0.022) 1px, transparent 1px);
-    }
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(0, 229, 255, 0.08), transparent 35%),
+    radial-gradient(circle at 75% 70%, rgba(124, 58, 237, 0.08), transparent 35%);
+  filter: blur(70px);
+}
 
+html[data-theme="light"] body::before {
+  background:
+    linear-gradient(rgba(12, 24, 48, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 24, 48, 0.022) 1px, transparent 1px);
+}
     button,
     input,
     a {
