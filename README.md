@@ -2,7 +2,7 @@
   <img src="Preview.jpg" alt="PGClock Pro Preview" width="900">
 </div>
 
-<h1 align="center">PGClock Pro</h1>
+<h1 align="center">VIPSTAR(PG-CLOCK)</h1>
 
 <p align="center">
   نسخهٔ حرفه‌ای — قالب اشتراک با برند، زیرعنوان و لوگوی سفارشی
