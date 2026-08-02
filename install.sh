@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # PGClock Installer for Pasarguard
-# https://github.com/Mrclocks/PGClock
+# https://github.com/durwinam/idont
 #
 set -euo pipefail
 
