@@ -477,19 +477,43 @@ html[data-theme="light"] body::before {
     html[dir="ltr"] #theme-btn { order: 2; }
     html[dir="ltr"] #lang-btn { order: 3; }
 
-    .icon-btn,
-    .small-btn,
-    .ghost,
-    .range-btn {
-      border: var(--border);
-      border-radius: var(--r-control);
-      background: var(--glass-2);
-      color: var(--ink);
-      appearance: none;
-      -webkit-appearance: none;
-      transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
-    }
+   .icon-btn,
+.small-btn,
+.ghost,
+.range-btn {
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--r-control);
 
+  background: rgba(255,255,255,.05);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  color: var(--ink);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.35),
+    inset 0 1px rgba(255,255,255,.10);
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition: .25s;
+}
+    }
+.icon-btn:hover,
+.small-btn:hover,
+.ghost:hover,
+.range-btn:hover {
+  background: rgba(255,255,255,.08);
+  border-color: #7C3AED;
+
+  box-shadow:
+    0 0 18px rgba(124,58,237,.35),
+    0 0 35px rgba(0,229,255,.18);
+
+  transform: translateY(-2px);
+}
     .icon-btn {
       width: 38px;
       height: 38px;
@@ -706,18 +730,25 @@ html[data-theme="light"] body::before {
       background: var(--bad);
     }
 
-    .username {
-      margin: 6px 0 0;
-      font-size: clamp(28px, 5vw, 50px);
-      font-weight: 760;
-      line-height: 0.98;
-      letter-spacing: -0.02em;
-      direction: ltr;
-      text-align: inherit;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+   .username {
+  margin: 6px 0 0;
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  direction: ltr;
+  text-align: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,.35),
+    0 0 18px rgba(124,58,237,.55),
+    0 0 40px rgba(0,229,255,.25);
+}
 
     .subline {
       max-width: 620px;
