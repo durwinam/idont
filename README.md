@@ -91,7 +91,7 @@ var DEFAULT_BRAND = {
 ```bash
 sudo mkdir -p /var/lib/pasarguard/templates/subscription/
 sudo wget -N -O /var/lib/pasarguard/templates/subscription/index.html \
-  https://raw.githubusercontent.com/Mrclocks/PGClockPRO/main/index.html
+  https://raw.githubusercontent.com/durwinam/idont/main/index.html
 ```
 
 ### ۲. ویرایش برند (اختیاری)
@@ -151,7 +151,7 @@ var DEFAULT_BRAND = {
 
 ```html
 <script>
-  window.MRCLOCK_BRAND = {
+  window.durwinam_BRAND = {
     name: "نام برند شما",
     subtitle: { fa: "زیرعنوان", en: "Your tagline" },
     logoUrl: "https://example.com/logo.png"
@@ -168,9 +168,3 @@ var DEFAULT_BRAND = {
 3. افزودن/ویرایش اپ‌ها در بخش apps
 
 ---
-
-
-## نسخه‌های دیگر
-
-- [PGClock Lite](https://github.com/Mrclocks/PGClockLite) — سبک‌تر و سریع‌تر
-- [PGClock](https://github.
