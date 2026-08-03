@@ -1760,25 +1760,54 @@ html[data-theme="light"] body::before {
       transform: translateX(-50%);
       contain: layout style paint;
     }
+.nav-tab {
+    position: relative;
+    min-width: 0;
+    margin: 0;
 
-    .nav-tab {
-      position: relative;
-      min-width: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 9px 4px;
-      border: 0;
-      border-radius: 999px;
-      background: transparent;
-      color: var(--muted);
-      font-size: 10px;
-      font-weight: 630;
-      line-height: 1;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 9px 4px;
+
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.10);
+
+    background: rgba(255,255,255,.05);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 630;
+    line-height: 1;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.nav-tab:hover{
+    background: rgba(255,255,255,.10);
+    border-color: rgba(124,58,237,.45);
+
+    box-shadow:
+        0 0 18px rgba(124,58,237,.30),
+        0 8px 30px rgba(0,0,0,.30);
+
+    transform: translateY(-2px);
+}
 
     .mobile-nav .nav-tab {
       height: 100%;
