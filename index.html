@@ -829,15 +829,41 @@ html[data-theme="light"] body[data-view="apps"] .mobile-nav .nav-tab[data-view="
     }
 
     .metric,
-    .detail,
-    .config-card,
-    .app-card,
-    .os-card {
-      border: var(--border);
-      border-radius: var(--r-box);
-      background: var(--surface);
-      min-width: 0;
-    }
+ .detail,
+.config-card,
+.app-card,
+.os-card {
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: var(--r-box);
+
+    background: rgba(255,255,255,.05);
+
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    min-width: 0;
+
+    transition:
+        .3s ease;
+}
+
+.detail:hover,
+.config-card:hover,
+.app-card:hover,
+.os-card:hover{
+    background: rgba(255,255,255,.08);
+    border-color: rgba(124,58,237,.35);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35),
+        0 0 20px rgba(124,58,237,.15);
+}
 
     .metric {
       min-height: 86px;
