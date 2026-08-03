@@ -1741,25 +1741,37 @@ html[data-theme="light"] body::before {
       to { transform: rotate(360deg); }
     }
 
-    .mobile-nav {
-      position: fixed;
-      left: 50%;
-      bottom: calc(var(--nav-offset) + env(safe-area-inset-bottom, 0px));
-      z-index: 80;
-      width: min(360px, calc(100% - 24px));
-      height: var(--nav-height);
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 5px;
-      padding: 8px;
-      align-items: stretch;
-      border: var(--border);
-      border-color: var(--nav-border);
-      border-radius: 999px;
-      background: var(--nav-bg);
-      transform: translateX(-50%);
-      contain: layout style paint;
-    }
+ .mobile-nav {
+    position: fixed;
+    left: 50%;
+    bottom: calc(var(--nav-offset) + env(safe-area-inset-bottom, 0px));
+    z-index: 80;
+
+    width: min(360px, calc(100% - 24px));
+    height: var(--nav-height);
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 8px;
+    padding: 8px;
+
+    align-items: stretch;
+
+    transform: translateX(-50%);
+    contain: layout style paint;
+
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.10);
+
+    background: rgba(20,22,40,.45);
+
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.08);
+}
 .nav-tab {
     position: relative;
     min-width: 0;
