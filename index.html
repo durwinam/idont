@@ -526,28 +526,49 @@ html[data-theme="light"] body[data-view="apps"] .mobile-nav .nav-tab[data-view="
     html[dir="ltr"] #theme-btn { order: 2; }
     html[dir="ltr"] #lang-btn { order: 3; }
 
-   .icon-btn,
+.icon-btn,
 .small-btn,
 .ghost,
 .range-btn {
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: var(--r-control);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
 
-  background: rgba(255,255,255,.05);
+  background: rgba(255,255,255,.06);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  color: #fff;
 
-  color: var(--ink);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
 
   box-shadow:
-    0 8px 24px rgba(0,0,0,.35),
-    inset 0 1px rgba(255,255,255,.10);
+      0 10px 30px rgba(0,0,0,.28),
+      inset 0 1px 0 rgba(255,255,255,.10);
 
   appearance: none;
   -webkit-appearance: none;
 
-  transition: .25s;
+  transition: all .25s ease;
+}
+
+.icon-btn:hover,
+.small-btn:hover,
+.ghost:hover,
+.range-btn:hover {
+  background: rgba(255,255,255,.10);
+  border-color: rgba(124,58,237,.45);
+
+  box-shadow:
+      0 12px 35px rgba(0,0,0,.32),
+      0 0 18px rgba(124,58,237,.18);
+
+  transform: translateY(-2px);
+}
+
+.icon-btn:active,
+.small-btn:active,
+.ghost:active,
+.range-btn:active {
+  transform: scale(.97);
 }
 .icon-btn:hover,
 .small-btn:hover,
@@ -849,28 +870,42 @@ html[data-theme="light"] body[data-view="apps"] .mobile-nav .nav-tab[data-view="
     }
 
     .metric,
- .detail,
+.detail,
 .config-card,
 .app-card,
 .os-card {
+    min-width: 0;
+
     border: 1px solid rgba(255,255,255,.10);
-    border-radius: var(--r-box);
+    border-radius: 22px;
 
     background: rgba(255,255,255,.05);
 
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.30),
+        0 12px 35px rgba(0,0,0,.28),
         inset 0 1px 0 rgba(255,255,255,.08);
 
-    min-width: 0;
-
-    transition:
-        .3s ease;
+    transition: all .3s ease;
 }
 
+.detail:hover,
+.config-card:hover,
+.app-card:hover,
+.os-card:hover {
+    transform: translateY(-4px);
+
+    background: rgba(255,255,255,.08);
+
+    border-color: rgba(124,58,237,.35);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.35),
+        0 0 24px rgba(124,58,237,.18);
+}
+    
 .detail:hover,
 .config-card:hover,
 .app-card:hover,
@@ -1196,17 +1231,46 @@ html[data-theme="light"] body[data-view="apps"] .mobile-nav .nav-tab[data-view="
       margin-top: 0;
     }
 
-    .detail {
-      min-height: 86px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 8px;
-      text-align: right;
-      overflow: hidden;
-    }
+ .detail {
+    min-height: 90px;
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    text-align: right;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.05);
+
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    transition: all .3s ease;
+}
+
+.detail:hover{
+    transform: translateY(-3px);
+
+    background: rgba(255,255,255,.08);
+
+    border-color: rgba(124,58,237,.35);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35),
+        0 0 20px rgba(124,58,237,.18);
+}
 
     .detail .v {
       font-size: 17px;
