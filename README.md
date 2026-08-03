@@ -12,8 +12,7 @@
   <a href="#نصب-خودکار">نصب خودکار</a> ·
   <a href="#نصب-دستی">نصب دستی</a> ·
   <a href="#سفارشی‌سازی-برند">سفارشی‌سازی برند</a> ·
-  <a href="#تنظیمات-پنل">تنظیمات پنل</a> ·
-  <a href="#نسخه‌های-دیگر">نسخه‌های دیگر</a>
+  <a href="#تنظیمات-پنل">تنظیمات پنل</a> .
 </p>
 
 ---
@@ -43,7 +42,7 @@ wget -qO /tmp/idont-install.sh https://raw.githubusercontent.com/durwinam/idont/
 ```
 
 
-در منو گزینه **۳) PGClock Pro** را انتخاب کنید. سپس از شما پرسیده می‌شود:
+در منو گزینه **3) PGClock Pro** را انتخاب کنید. سپس از شما پرسیده می‌شود:
 
 - **نام برند** (FA و EN)
 - **زیرعنوان / توضیح کوتاه** (FA و EN)
@@ -51,7 +50,7 @@ wget -qO /tmp/idont-install.sh https://raw.githubusercontent.com/durwinam/idont/
 
 ### اسکریپت چه کار می‌کند؟
 
-1. منوی انتخاب نسخه (`Lite` / `PGClock` / `Pro`)
+1. منوی انتخاب نسخه (`Pro`)
 2. برای Pro: دریافت اطلاعات برند و patch خودکار روی `index.html`
 3. ذخیره در:
 
@@ -138,7 +137,7 @@ sudo pasarguard restart
 
 ```javascript
 var DEFAULT_BRAND = {
-  name: "MrClock Template",
+  name: "durwinam Template",
   subtitle: {
     fa: "پنل اشتراک",
     en: "Subscription panel"
