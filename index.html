@@ -155,7 +155,38 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+<script>
+const percent = userData.usagePercent; // درصد مصرف
 
+const circle = document.querySelector(".progress");
+const text = document.querySelector(".center span");
+
+const radius = 50;
+const circumference = 2 * Math.PI * radius;
+
+circle.style.strokeDasharray = circumference;
+circle.style.strokeDashoffset =
+    circumference - (percent / 100) * circumference;
+
+let color;
+
+if (percent < 40) {
+    color = "#22C55E"; // سبز
+} else if (percent < 70) {
+    color = "#FACC15"; // زرد
+} else if (percent < 90) {
+    color = "#FB923C"; // نارنجی
+} else {
+    color = "#EF4444"; // قرمز
+}
+
+circle.style.stroke = color;
+circle.style.filter = `drop-shadow(0 0 12px ${color})`;
+
+text.innerHTML = percent + "%";
+text.style.color = color;
+</script>
+    }
 html,
 body {
   min-height: 97%;
@@ -3493,3 +3524,82 @@ html[data-theme="light"] body::before {
   </script>
 </body>
 </html>
+.icon-btn,
+.small-btn,
+.ghost,
+.range-btn{
+    position:relative;
+    overflow:hidden;
+
+    background:rgba(32,22,68,.55)!important;
+
+    border:1px solid rgba(126,103,255,.35)!important;
+
+    border-radius:16px;
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    color:#fff!important;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.12),
+        0 8px 30px rgba(0,0,0,.35);
+
+    transition:.3s;
+}
+
+.icon-btn::before,
+.small-btn::before,
+.ghost::before,
+.range-btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,0) 45%
+    );
+
+    pointer-events:none;
+}
+
+.icon-btn:hover,
+.small-btn:hover,
+.ghost:hover,
+.range-btn:hover{
+
+    background:rgba(50,35,110,.75)!important;
+
+    border-color:#7B4DFF!important;
+
+    box-shadow:
+        0 0 15px rgba(123,77,255,.45),
+        0 0 35px rgba(58,133,255,.30),
+        inset 0 1px rgba(255,255,255,.15);
+
+    transform:translateY(-2px);
+}
+.nav-tab{
+    background:rgba(32,22,68,.55)!important;
+
+    border:1px solid rgba(126,103,255,.30)!important;
+
+    backdrop-filter:blur(20px);
+
+    color:#D9DBFF!important;
+}
+
+.nav-tab.active{
+    background:linear-gradient(135deg,#3A85FF,#7B4DFF)!important;
+
+    border:1px solid rgba(154,175,255,.65)!important;
+
+    box-shadow:
+        0 0 18px rgba(58,133,255,.35),
+        0 0 35px rgba(123,77,255,.35);
+
+    color:#fff!important;
+}
