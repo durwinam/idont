@@ -1,5 +1,5 @@
 
-  <img src="ChatGPT Image Aug 3, 2026, 01_10_36 PM_00000.png" alt="ChatGPT Image Aug 3, 2026, 01_10_36 PM_00000.png" width="900">
+  <img src="Preview.png" alt="Preview.png" width="900">
 </div>
 
 <h1 align="center">VIPSTAR(PG-CLOCK)</h1>
