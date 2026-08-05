@@ -65,7 +65,7 @@ print_banner() {
   log_blank
   hr
   log_line "${C_WHITE}${C_BOLD}  idont Installer for Pasarguard${C_RESET}"
-  log_line "${C_DIM}  Version $1.0.1}${C_RESET}"
+  log_line "${C_DIM}  Version ${SCRIPT_VERSION}${C_RESET}"
   hr
   log_blank
 }
