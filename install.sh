@@ -14,7 +14,7 @@ readonly INSTALLER_RAW="https://raw.githubusercontent.com/durwinam/idont/main/in
 readonly URL_PRO="https://raw.githubusercontent.com/durwinam/idont/main/index.html"
 
 # When run via "curl | bash", stdin is the pipe — re-download and re-run from a real file.
-if [[ ! -t 0 ]] && [[ -z "${PGCLOCK_INSTALL_REEXEC:-}" ]]; then
+if [[ ! -t 0 ]] && [[ -z "${idont_INSTALL_REEXEC:-}" ]]; then
   tmpfile="$(mktemp /tmp/pgclock-install-XXXXXX.sh)"
   cleanup() { rm -f "$tmpfile"; }
   trap cleanup EXIT
@@ -64,8 +64,8 @@ read_tty() {
 print_banner() {
   log_blank
   hr
-  log_line "${C_WHITE}${C_BOLD}  PGClock Installer for Pasarguard${C_RESET}"
-  log_line "${C_DIM}  Version ${SCRIPT_VERSION}${C_RESET}"
+  log_line "${C_WHITE}${C_BOLD}  idont Installer for Pasarguard${C_RESET}"
+  log_line "${C_DIM}  Version $1.0.1}${C_RESET}"
   hr
   log_blank
 }
@@ -130,7 +130,7 @@ download_template() {
 apply_brand_pro() {
   local file="$1"
 
-  info "Applying PGClock Pro brand settings..."
+  info "Applying idont Pro brand settings..."
   export BRAND_NAME="${BRAND_NAME:-}"
   export BRAND_SUBTITLE="${BRAND_SUBTITLE:-}"
   export BRAND_LOGO="${BRAND_LOGO:-}"
@@ -399,9 +399,9 @@ restart_pasarguard() {
 print_menu() {
   log_line "${C_BOLD}Select a template:${C_RESET}"
   log_blank
-  log_line "  ${C_GREEN}1${C_RESET}) ${C_BOLD}PGClock Lite${C_RESET}   ${C_DIM}Lightweight and fast${C_RESET}"
-  log_line "  ${C_CYAN}2${C_RESET}) ${C_BOLD}PGClock${C_RESET}        ${C_DIM}Standard edition (recommended)${C_RESET}"
-  log_line "  ${C_YELLOW}3${C_RESET}) ${C_BOLD}PGClock Pro${C_RESET}     ${C_DIM}Custom brand name, tagline, and logo${C_RESET}"
+  log_line "  ${C_GREEN}1${C_RESET}) ${C_BOLD}idont Lite${C_RESET}   ${C_DIM}Lightweight and fast${C_RESET}"
+  log_line "  ${C_CYAN}2${C_RESET}) ${C_BOLD}idont${C_RESET}        ${C_DIM}Standard edition (recommended)${C_RESET}"
+  log_line "  ${C_YELLOW}3${C_RESET}) ${C_BOLD}idont Pro${C_RESET}     ${C_DIM}Custom brand name, tagline, and logo${C_RESET}"
   log_line "  ${C_RED}0${C_RESET}) ${C_BOLD}Exit${C_RESET}"
   log_blank
 }
@@ -409,7 +409,7 @@ print_menu() {
 prompt_pro_branding() {
   local brand_name brand_subtitle brand_logo
 
-  log_line "${C_YELLOW}${C_BOLD}--- PGClock Pro Brand Setup ---${C_RESET}"
+  log_line "${C_YELLOW}${C_BOLD}--- idont Pro Brand Setup ---${C_RESET}"
   log_blank
   log_line "${C_DIM}Press Enter to skip any field and keep the default value${C_RESET}"
   log_blank
@@ -439,19 +439,19 @@ prompt_pro_branding() {
 }
 
 install_lite() {
-  info "Installing ${C_BOLD}PGClock Lite${C_RESET}..."
+  info "Installing ${C_BOLD}idont Lite${C_RESET}..."
   download_template "$URL_LITE" "$TARGET_FILE"
 }
 
 install_standard() {
-  info "Installing ${C_BOLD}PGClock${C_RESET}..."
+  info "Installing ${C_BOLD}idont${C_RESET}..."
   download_template "$URL_STANDARD" "$TARGET_FILE"
 }
 
 install_pro() {
   local backup
 
-  info "Installing ${C_BOLD}PGClock Pro${C_RESET}..."
+  info "Installing ${C_BOLD}idont Pro${C_RESET}..."
   prompt_pro_branding
 
   download_template "$URL_PRO" "$TARGET_FILE"
@@ -496,17 +496,17 @@ main() {
     case "$choice" in
       1)
         install_lite
-        edition="PGClock Lite"
+        edition="idont Lite"
         break
         ;;
       2)
         install_standard
-        edition="PGClock"
+        edition="idont"
         break
         ;;
       3)
         install_pro
-        edition="PGClock Pro"
+        edition="idont"
         break
         ;;
       0)
