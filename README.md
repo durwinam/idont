@@ -2,7 +2,7 @@
   <img src="Preview.png" alt="Preview.png" width="900">
 </div>
 
-<h1 align="center">VIPSTAR(PG-CLOCK)</h1>
+<h1 align="center">Idont Sub template(PG)</h1>
 
 <p align="center">
   نسخهٔ حرفه‌ای — قالب اشتراک با برند، زیرعنوان و لوگوی سفارشی
