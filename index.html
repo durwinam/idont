@@ -161,27 +161,73 @@ body {
   min-height: 100dvh;
   padding: max(38px, env(safe-area-inset-top)) 26px var(--page-bottom);
   color: var(--ink);
+
   background:
     radial-gradient(circle at 18% 15%, rgba(120,81,255,.12) 0%, transparent 28%),
     radial-gradient(circle at 85% 18%, rgba(0,170,255,.08) 0%, transparent 25%),
     radial-gradient(circle at 50% 100%, rgba(90,70,255,.08) 0%, transparent 35%),
     linear-gradient(180deg,#050B16 0%,#0A1223 30%,#0F1830 65%,#111B34 100%);
+
   font-family: "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -30%;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,170,255,.22), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(124,58,237,.20), transparent 35%),
+    radial-gradient(circle at 35% 80%, rgba(0,229,255,.18), transparent 35%),
+    radial-gradient(circle at 70% 75%, rgba(90,70,255,.18), transparent 35%);
+
+  filter: blur(90px);
+  animation: auroraMove 25s ease-in-out infinite alternate;
 }
 
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -1;
   pointer-events: none;
+
   background:
     radial-gradient(circle at 25% 25%, rgba(0,229,255,.08), transparent 35%),
     radial-gradient(circle at 75% 70%, rgba(124,58,237,.08), transparent 35%);
+
   filter: blur(70px);
-} 
-    
+}
+
+@keyframes auroraMove {
+  0% {
+    transform: translate(-8%, -6%) scale(1);
+  }
+
+  25% {
+    transform: translate(6%, -3%) scale(1.08);
+  }
+
+  50% {
+    transform: translate(8%, 5%) scale(1.15);
+  }
+
+  75% {
+    transform: translate(-5%, 8%) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-8%, -6%) scale(1);
+  }
+}
+
 button,
 input,
 a {
