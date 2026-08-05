@@ -14,7 +14,7 @@ readonly INSTALLER_RAW="https://raw.githubusercontent.com/durwinam/idont/main/in
 readonly URL_PRO="https://raw.githubusercontent.com/durwinam/idont/main/index.html"
 
 # When run via "curl | bash", stdin is the pipe — re-download and re-run from a real file.
-if [[ ! -t 0 ]] && [[ -z "${idont_INSTALL_REEXEC:-}" ]]; then
+if [[ ! -t 0 ]] && [[ -z "${PGCLOCK_INSTALL_REEXEC:-}" ]]; then
   tmpfile="$(mktemp /tmp/pgclock-install-XXXXXX.sh)"
   cleanup() { rm -f "$tmpfile"; }
   trap cleanup EXIT
@@ -130,7 +130,7 @@ download_template() {
 apply_brand_pro() {
   local file="$1"
 
-  info "Applying idont Pro brand settings..."
+  info "Applying PGClock Pro brand settings..."
   export BRAND_NAME="${BRAND_NAME:-}"
   export BRAND_SUBTITLE="${BRAND_SUBTITLE:-}"
   export BRAND_LOGO="${BRAND_LOGO:-}"
@@ -409,12 +409,12 @@ print_menu() {
 prompt_pro_branding() {
   local brand_name brand_subtitle brand_logo
 
-  log_line "${C_YELLOW}${C_BOLD}--- idont Pro Brand Setup ---${C_RESET}"
+  log_line "${C_YELLOW}${C_BOLD}--- PGClock Pro Brand Setup ---${C_RESET}"
   log_blank
   log_line "${C_DIM}Press Enter to skip any field and keep the default value${C_RESET}"
   log_blank
 
-  read_tty "$(printf '%b' "${C_BOLD}Brand name${C_RESET} (e.g. MrClock): ")" brand_name
+  read_tty "$(printf '%b' "${C_BOLD}Brand name${C_RESET} (e.g. durwin): ")" brand_name
   brand_name="${brand_name:-}"
 
   read_tty "$(printf '%b' "${C_BOLD}Tagline / caption${C_RESET} (e.g. Subscription panel): ")" brand_subtitle
@@ -439,19 +439,19 @@ prompt_pro_branding() {
 }
 
 install_lite() {
-  info "Installing ${C_BOLD}idont Lite${C_RESET}..."
+  info "Installing ${C_BOLD}PGClock Lite${C_RESET}..."
   download_template "$URL_LITE" "$TARGET_FILE"
 }
 
 install_standard() {
-  info "Installing ${C_BOLD}idont${C_RESET}..."
+  info "Installing ${C_BOLD}PGClock${C_RESET}..."
   download_template "$URL_STANDARD" "$TARGET_FILE"
 }
 
 install_pro() {
   local backup
 
-  info "Installing ${C_BOLD}idont Pro${C_RESET}..."
+  info "Installing ${C_BOLD}PGClock Pro${C_RESET}..."
   prompt_pro_branding
 
   download_template "$URL_PRO" "$TARGET_FILE"
@@ -496,17 +496,17 @@ main() {
     case "$choice" in
       1)
         install_lite
-        edition="idont Lite"
+        edition="PGClock Lite"
         break
         ;;
       2)
         install_standard
-        edition="idont"
+        edition="PGClock"
         break
         ;;
       3)
         install_pro
-        edition="idont"
+        edition="PGClock Pro"
         break
         ;;
       0)
