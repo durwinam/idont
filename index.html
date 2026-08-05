@@ -151,22 +151,48 @@ html[data-theme="light"] {
   --stat-lime: #65a30d;
   --stat-lime-bg: rgba(101, 163, 13, 0.10);
 }
-
-{box-sizing: border-box;-webkit-tap-highlight-color: transparent;}
-
-html,body {min-height: 97%;}
-
-body {margin: 0;min-height: 100dvh;padding:max(38px, env(safe-area-inset-top))26pxvar(--page-bottom);color: var(--ink);background:radial-gradient(circle at 18% 15%, rgba(120,81,255,.12) 0%, transparent 28%),radial-gradient(circle at 85% 18%, rgba(0,170,255,.08) 0%, transparent 25%),radial-gradient(circle at 50% 100%, rgba(90,70,255,.08) 0%, transparent 35%),linear-gradient(180deg,#050B16 0%,#0A1223 30%,#0F1830 65%,#111B34 100%);}
-
-body::after {content: "";position: fixed;inset: 0;z-index: -2;pointer-events: none;background:radial-gradient(circle at 25% 25%, rgba(0, 229, 255, 0.08), transparent 35%),radial-gradient(circle at 75% 70%, rgba(124, 58, 237, 0.08), transparent 35%);filter: blur(70px);}
-
-html[data-theme="light"] body::before {background:linear-gradient(rgba(12, 24, 48, 0.028) 1px, transparent 1px),linear-gradient(90deg, rgba(12, 24, 48, 0.022) 1px, transparent 1px);}button,input,a {font: inherit;}
-
-button {
-  color: inherit;
-  cursor: pointer;
+html,
+body {
+  min-height: 97%;
 }
 
+body {
+  margin: 0;
+  min-height: 100dvh;
+  padding: max(38px, env(safe-area-inset-top)) 26px var(--page-bottom);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 15%, rgba(120,81,255,.12) 0%, transparent 28%),
+    radial-gradient(circle at 85% 18%, rgba(0,170,255,.08) 0%, transparent 25%),
+    radial-gradient(circle at 50% 100%, rgba(90,70,255,.08) 0%, transparent 35%),
+    linear-gradient(180deg,#050B16 0%,#0A1223 30%,#0F1830 65%,#111B34 100%);
+  font-family: "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(0,229,255,.08), transparent 35%),
+    radial-gradient(circle at 75% 70%, rgba(124,58,237,.08), transparent 35%);
+  filter: blur(70px);
+}
+
+html[data-theme="light"] body::before {
+  background:
+    linear-gradient(rgba(12,24,48,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12,24,48,.022) 1px, transparent 1px);
+}
+
+button,
+input,
+a {
+  font: inherit;
+}
 a {
   color: inherit;
   text-decoration: none;
