@@ -177,20 +177,18 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: -50%;
+  inset: -30%;
   z-index: -2;
   pointer-events: none;
 
   background:
-    radial-gradient(circle, rgba(0,229,255,.25) 0%, transparent 30%),
-    radial-gradient(circle, rgba(124,58,237,.22) 0%, transparent 30%),
-    radial-gradient(circle, rgba(80,140,255,.20) 0%, transparent 35%);
+    radial-gradient(circle at 20% 20%, rgba(0,170,255,.22), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(124,58,237,.20), transparent 35%),
+    radial-gradient(circle at 35% 80%, rgba(0,229,255,.18), transparent 35%),
+    radial-gradient(circle at 70% 75%, rgba(90,70,255,.18), transparent 35%);
 
-  background-size: 40% 40%, 45% 45%, 50% 50%;
-  background-position: 0% 0%, 100% 20%, 50% 100%;
-
-  filter: blur(120px);
-  animation: aurora 18s linear infinite;
+  filter: blur(90px);
+  animation: auroraMove 25s ease-in-out infinite alternate;
 }
 
 body::after {
@@ -207,23 +205,33 @@ body::after {
   filter: blur(70px);
 }
 
-@keyframes aurora {
+@keyframes auroraMove {
   0% {
-    transform: rotate(0deg) scale(1);
-    background-position: 0% 0%, 100% 20%, 50% 100%;
+    transform: translate(-8%, -6%) scale(1);
+  }
+
+  25% {
+    transform: translate(6%, -3%) scale(1.08);
   }
 
   50% {
-    transform: rotate(180deg) scale(1.15);
-    background-position: 100% 100%, 20% 0%, 0% 40%;
+    transform: translate(8%, 5%) scale(1.15);
+  }
+
+  75% {
+    transform: translate(-5%, 8%) scale(1.1);
   }
 
   100% {
-    transform: rotate(360deg) scale(1);
-    background-position: 0% 0%, 100% 20%, 50% 100%;
+    transform: translate(-8%, -6%) scale(1);
   }
 }
 
+button,
+input,
+a {
+  font: inherit;
+}
 button,
 input,
 a {
