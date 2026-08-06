@@ -415,7 +415,7 @@ input {
 .badge {
   min-width: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: clip;
   white-space: nowrap;
 }
 
@@ -487,25 +487,58 @@ html[dir="ltr"] #lang-btn { order: 3; }
 .icon-btn,
 .small-btn,
 .ghost,
-.range-btn{
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:var(--r-control);
+.range-btn {
 
-    background:rgba(255,255,255,.05);
+    border-radius: var(--r-control);
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
 
-    color:var(--ink);
+    color: var(--ink);
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition: .25s ease;
+}
+
+
+/* =====================
+   DARK GLASS
+   ===================== */
+
+[data-theme="dark"] .icon-btn,
+[data-theme="dark"] .small-btn,
+[data-theme="dark"] .ghost,
+[data-theme="dark"] .range-btn {
+
+    background: rgba(255,255,255,.07);
+
+    border: 1px solid rgba(255,255,255,.14);
 
     box-shadow:
-        0 8px 24px rgba(0,0,0,.35),
-        inset 0 1px rgba(255,255,255,.10);
+        0 8px 30px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.18);
+}
 
-    appearance:none;
-    -webkit-appearance:none;
 
-    transition:.25s;
+
+/* =====================
+   LIGHT GLASS
+   ===================== */
+
+[data-theme="light"] .icon-btn,
+[data-theme="light"] .small-btn,
+[data-theme="light"] .ghost,
+[data-theme="light"] .range-btn {
+
+    background: rgba(255,255,255,.55);
+
+    border: 1px solid rgba(255,255,255,.75);
+
+    box-shadow:
+        0 8px 30px rgba(15,23,42,.10),
+        inset 0 1px rgba(255,255,255,.90);
 }
 
 .icon-btn:hover,
