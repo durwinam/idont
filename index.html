@@ -1711,9 +1711,16 @@ html[dir="ltr"] .os-info {
   margin: 28px auto;
   padding: 16px;
   border-radius: var(--r-box);
-  background: #fff;
+  background: #f1f5f9;
   color: #111827;
   font-size: 12px;
+  transition: background 0.3s ease;
+}
+
+/* Dark Mode */
+[data-theme="dark"] .qr-canvas {
+  background: #1e293b;
+  color: #f8fafc;
 }
 
 .qr-canvas canvas,
