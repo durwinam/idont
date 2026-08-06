@@ -842,18 +842,49 @@ transition: all .3s ease;
 
 }
 
-.detail,.config-card,.app-card,.os-card {
+.detail,
+.config-card,
+.app-card,
+.os-card {
 
-background: rgba(24, 32, 48, 0.38);
+    min-width: 0;
 
-border-color: rgba(255,255,255,.14);
+    border-radius: var(--r-box);
 
-transform: translateY(-3px);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
 
-box-shadow:
-    0 16px 45px rgba(0,0,0,.30),
-    inset 0 1px 0 rgba(255,255,255,.10);
+    transition: .25s ease;
 
+    /* دارک (پیش‌فرض) */
+    background: rgba(24,32,48,.38);
+
+    border: 1px solid rgba(255,255,255,.14);
+
+    box-shadow:
+        0 16px 45px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.10);
+
+    transform: translateY(-3px);
+}
+
+/* فقط تم لایت */
+
+html[data-theme="light"] .detail,
+html[data-theme="light"] .config-card,
+html[data-theme="light"] .app-card,
+html[data-theme="light"] .os-card{
+
+    background: rgba(255,255,255,.42);
+
+    border: 1px solid rgba(255,255,255,.58);
+
+    box-shadow:
+        0 16px 45px rgba(120,140,180,.15),
+        inset 0 1px 0 rgba(255,255,255,.90);
+
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
 }
 
 .metric {
