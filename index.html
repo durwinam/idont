@@ -1235,14 +1235,21 @@ html[dir="ltr"] .sheet-sub {
   text-overflow: ellipsis;
 }
 
-.note {
+..note {
+
   margin: 5px 0 0;
+
   color: var(--muted);
+
   font-size: 12px;
+
   line-height: 1.7;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+  white-space: normal;
+
+  overflow: visible;
+
+  text-overflow: clip;
 }
 
 .range {
@@ -2474,7 +2481,7 @@ html[data-perf="lite"] #support-btn.alert-active {
   </div>
 
   <nav class="mobile-nav" aria-label="sections">
-    <button class="nav-tab" type="button" data-view="account"><span data-svg="user"></span><span data-i18n="account">اطلاعات حساب</span></button>
+    <button class="nav-tab" type="button" data-view="account"><span data-svg="user"></span><span data-i18n="account">احساب کاربری</span></button>
     <button class="nav-tab" type="button" data-view="configs"><span data-svg="sliders"></span><span data-i18n="configs">کانفیگ‌ها</span></button>
     <button class="nav-tab" type="button" data-view="apps"><span data-svg="apps"></span><span data-i18n="apps">اپلیکیشن‌ها</span></button>
   </nav>
