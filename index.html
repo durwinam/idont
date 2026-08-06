@@ -151,6 +151,12 @@ html[data-theme="light"] {
   --stat-lime: #65a30d;
   --stat-lime-bg: rgba(101, 163, 13, 0.10);
 }
+
+       * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
 html,
 body {
   min-height: 97%;
@@ -369,24 +375,50 @@ input {
 }
 
 .glass {
-     position: relative;
+  position: relative;
   background: var(--glass-bg);
   backdrop-filter: blur(var(--blur)) saturate(190%);
   -webkit-backdrop-filter: blur(var(--blur)) saturate(190%);
   border-radius: var(--r-xl);
   border: 0.5px solid var(--glass-stroke);
   box-shadow: var(--shadow), inset 0 1px 0 var(--specular);
-  overflow: hidden; 
-  }
-    .glass::before {
+  overflow: hidden;
+
+  /* add */
+  isolation: isolate;
+  transform: translateZ(0);
+  transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.glass::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   background: linear-gradient(145deg, rgba(255,255,255,0.09) 0%, transparent 42%);
   pointer-events: none;
+
+  /* add */
+  opacity: .9;
 }
 
+.glass::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(255,255,255,.18),
+      transparent 45%),
+    radial-gradient(circle at bottom right,
+      rgba(255,255,255,.05),
+      transparent 55%);
+
+  opacity: .8;
+}
 .topbar {
   position: relative;
   z-index: 40;
