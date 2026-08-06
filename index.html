@@ -3665,39 +3665,6 @@ html[data-perf="lite"] #support-btn.alert-active {
 
   init();
 })();
-    /* =========================
-   SVG CIRCLE RING CONTROLLER
-   ========================= */
-
-const RING_LENGTH = 527.8;
-
-function setRing(id, percent){
-
-    percent = Number(percent);
-
-    if(isNaN(percent)){
-        percent = 0;
-    }
-
-    // محدود کردن بین 0 تا 100
-    percent = Math.max(0, Math.min(100, percent));
-
-    const circle = document.getElementById(id);
-
-    if(!circle){
-        console.log("Ring not found:", id);
-        return;
-    }
-
-    circle.style.strokeDasharray = RING_LENGTH;
-
-    circle.style.strokeDashoffset =
-        RING_LENGTH - ((percent / 100) * RING_LENGTH);
-
-    // انیمیشن نرم
-    circle.style.transition =
-        "stroke-dashoffset 0.8s ease";
-}
   </script>
 
 </body>
