@@ -1363,88 +1363,24 @@ html[dir="ltr"] .sheet-sub {
   margin-top: 0;
 }
 
+/* Glass Effect */
+.card,
+.box,
+.config-card,
+.app-card,
+.os-card,
 .detail {
-  min-height: 86px;
-  padding: 16px;
+    background: rgba(24, 32, 48, 0.38) !important;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    border-radius: 18px;
 
-  gap: 8px;
-  text-align: right;
-  overflow: hidden;
-
-  border-radius: var(--r-box);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  transition: all 0.3s ease;
+    box-shadow:
+        0 16px 45px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.10);
 }
-
-
-/* =========================
-   LIGHT MODE
-   ========================= */
-
-[data-theme="light"] .detail {
-
-  background: rgba(255, 255, 255, 0.65);
-
-  border: 1px solid rgba(15, 23, 42, 0.10);
-
-  box-shadow:
-    0 8px 25px rgba(15, 23, 42, 0.08);
-
-  color: #0f172a;
-}
-
-
-/* =========================
-   DARK MODE
-   ========================= */
-
-[data-theme="dark"] .detail {
-
-  background: rgba(17, 24, 39, 0.55);
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.35);
-
-  color: #f8fafc;
-}
-
-
-/* Hover */
-.detail:hover {
-
-  transform: translateY(-2px);
-
-}
-
-
-[data-theme="light"] .detail:hover {
-
-  background: rgba(255, 255, 255, 0.85);
-
-}
-
-
-[data-theme="dark"] .detail:hover {
-
-  background: rgba(255, 255, 255, 0.10);
-
-}
-
-.detail .v {
-  font-size: 17px;
-  font-weight: 730;
-}
-
 .alert-banner {
   display: none;
   align-items: center;
