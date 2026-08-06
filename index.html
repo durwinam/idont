@@ -1363,24 +1363,88 @@ html[dir="ltr"] .sheet-sub {
   margin-top: 0;
 }
 
-/* Glass Effect */
-.card,
-.box,
-.config-card,
-.app-card,
-.os-card,
 .detail {
-    background: rgba(24, 32, 48, 0.38) !important;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+  min-height: 86px;
+  padding: 16px;
 
-    border: 1px solid rgba(255,255,255,.14) !important;
-    border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 
-    box-shadow:
-        0 16px 45px rgba(0,0,0,.30),
-        inset 0 1px 0 rgba(255,255,255,.10);
+  gap: 8px;
+  text-align: right;
+  overflow: hidden;
+
+  border-radius: var(--r-box);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition: all 0.3s ease;
 }
+
+
+/* =========================
+   LIGHT MODE
+   ========================= */
+
+[data-theme="light"] .detail {
+
+  background: rgba(255, 255, 255, 0.65);
+
+  border: 1px solid rgba(15, 23, 42, 0.10);
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.08);
+
+  color: #0f172a;
+}
+
+
+/* =========================
+   DARK MODE
+   ========================= */
+
+[data-theme="dark"] .detail {
+
+  background: rgba(17, 24, 39, 0.55);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35);
+
+  color: #f8fafc;
+}
+
+
+/* Hover */
+.detail:hover {
+
+  transform: translateY(-2px);
+
+}
+
+
+[data-theme="light"] .detail:hover {
+
+  background: rgba(255, 255, 255, 0.85);
+
+}
+
+
+[data-theme="dark"] .detail:hover {
+
+  background: rgba(255, 255, 255, 0.10);
+
+}
+
+.detail .v {
+  font-size: 17px;
+  font-weight: 730;
+}
+
 .alert-banner {
   display: none;
   align-items: center;
@@ -2317,7 +2381,11 @@ html[data-perf="lite"] #support-btn.alert-active {
   }
 }
 
-  </style>
+  .glass,.card,.box,.config-card,.app-card,.os-card,.detail,.plan-card,.feature-card,.info-card{background:rgba(24,32,48,.38)!important;backdrop-filter:blur(24px)!important;-webkit-backdrop-filter:blur(24px)!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:0 16px 45px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.10)!important;}
+
+/* added glass patch */
+.card:not(.glass), .box:not(.glass), .config-card:not(.glass), .app-card:not(.glass), .os-card:not(.glass), .detail:not(.glass){background:rgba(24,32,48,.38)!important;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.14)!important;box-shadow:0 16px 45px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.10)!important;border-radius:18px;}
+</style>
 </head>
 <body data-view="account">
   <div class="shell">
