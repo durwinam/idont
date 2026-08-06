@@ -593,8 +593,68 @@ html[data-theme="light"] .range-btn:hover{
   font-weight: 680;
   text-align: center;
   line-height: 1;
+
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition: all 0.25s ease;
 }
 
+
+/* =========================
+   LIGHT MODE
+   ========================= */
+
+[data-theme="light"] .small-btn,
+[data-theme="light"] .ghost {
+
+  background: rgba(255, 255, 255, 0.65);
+
+  border: 1px solid rgba(15, 23, 42, 0.10);
+
+  color: #0f172a;
+
+  box-shadow:
+    0 4px 16px rgba(15, 23, 42, 0.08);
+}
+
+
+[data-theme="light"] .small-btn:hover,
+[data-theme="light"] .ghost:hover {
+
+  background: rgba(255, 255, 255, 0.9);
+
+  transform: translateY(-1px);
+}
+
+
+
+/* =========================
+   DARK MODE
+   ========================= */
+
+[data-theme="dark"] .small-btn,
+[data-theme="dark"] .ghost {
+
+  background: rgba(255, 255, 255, 0.10);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  color: #f8fafc;
+
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+
+[data-theme="dark"] .small-btn:hover,
+[data-theme="dark"] .ghost:hover {
+
+  background: rgba(255, 255, 255, 0.18);
+
+  transform: translateY(-1px);
+}
 .ghost span {
   display: inline-flex;
   align-items: center;
