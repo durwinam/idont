@@ -400,7 +400,7 @@ restart_pasarguard() {
 print_menu() {
   log_line "${C_BOLD}Select a template:${C_RESET}"
   log_blank
-  log_line "  ${C_YELLOW}3${C_RESET}) ${C_BOLD}idont${C_RESET}     ${C_DIM}Custom brand name, tagline, and logo${C_RESET}"
+  log_line "  ${C_YELLOW}1${C_RESET}) ${C_BOLD}idont${C_RESET}     ${C_DIM}Custom brand name, tagline, and logo${C_RESET}"
   log_line "  ${C_RED}0${C_RESET}) ${C_BOLD}Exit${C_RESET}"
   log_blank
 }
