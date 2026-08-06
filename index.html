@@ -835,7 +835,37 @@ html[dir="rtl"] body[data-view-dir="prev"][data-view="apps"] #view-apps {
   background: var(--bad);
 }
 
-.username {margin: 6px 0 0;font-size: clamp(22px, 3.8vw, 38px);font-weight: 900;line-height: 1;letter-spacing: -0.03em;direction: rtl;text-align: right;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;background: linear-gradient(90deg,#ffffff,#dbeafe,#c4b5fd);-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;
+.username {
+  margin: 6px 0 0;
+  font-size: clamp(22px, 3.8vw, 38px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+
+  direction: rtl;
+  text-align: right;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+}
+
+
+/* Dark Theme */
+[data-theme="dark"] .username {
+  color: #ffffff;
+}
+
+
+/* Light Theme */
+[data-theme="light"] .username {
+  color: #111827;
+}
 
 text-shadow: 0 2px 8px rgba(0,0,0,.25);}
 
