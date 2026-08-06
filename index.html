@@ -162,17 +162,27 @@ body {
   padding: max(38px, env(safe-area-inset-top)) 26px var(--page-bottom);
   color: var(--ink);
 
+  /* Dark Theme (همان قبلی) */
   background:
     radial-gradient(circle at 18% 15%, rgba(120,81,255,.12) 0%, transparent 28%),
     radial-gradient(circle at 85% 18%, rgba(0,170,255,.08) 0%, transparent 25%),
     radial-gradient(circle at 50% 100%, rgba(90,70,255,.08) 0%, transparent 35%),
     linear-gradient(180deg,#050B16 0%,#0A1223 30%,#0F1830 65%,#111B34 100%);
 
-  font-family: "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+  font-family: "Vazirmatn",-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
   -webkit-font-smoothing: antialiased;
 
   position: relative;
   overflow-x: hidden;
+}
+
+/* فقط تم لایت */
+html[data-theme="light"] body{
+  background:
+    radial-gradient(circle at 5% 20%, rgba(255,105,180,.42) 0%, transparent 35%),
+    radial-gradient(circle at 75% 40%, rgba(0,200,255,.30) 0%, transparent 35%),
+    radial-gradient(circle at 100% 100%, rgba(255,185,80,.35) 0%, transparent 35%),
+    linear-gradient(135deg,#eef4ff 0%,#edf2ff 45%,#f8fbff 100%);
 }
 
 body::before {
@@ -192,6 +202,14 @@ body::before {
   animation: auroraMove 25s ease-in-out infinite alternate;
 }
 
+/* فقط تم لایت */
+html[data-theme="light"] body::before{
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255,110,190,.40), transparent 35%),
+    radial-gradient(circle at 72% 42%, rgba(0,210,255,.32), transparent 35%),
+    radial-gradient(circle at 100% 95%, rgba(255,185,80,.35), transparent 35%);
+}
+
 body::after {
   content: "";
   position: fixed;
@@ -206,23 +224,25 @@ body::after {
   filter: blur(70px);
 }
 
+/* فقط تم لایت */
+html[data-theme="light"] body::after{
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.55), transparent 60%);
+}
+
 @keyframes auroraMove {
   0% {
     transform: translate(-8%, -6%) scale(1);
   }
-
   25% {
     transform: translate(6%, -3%) scale(1.08);
   }
-
   50% {
     transform: translate(8%, 5%) scale(1.15);
   }
-
   75% {
     transform: translate(-5%, 8%) scale(1.1);
   }
-
   100% {
     transform: translate(-8%, -6%) scale(1);
   }
