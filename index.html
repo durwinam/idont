@@ -311,43 +311,6 @@ input {
   background: linear-gradient(145deg, rgba(255,255,255,0.09) 0%, transparent 42%);
   pointer-events: none;
 }
-    .vpn-card{
-    width:220px;
-    height:220px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.progress-ring{
-    width:170px;
-    height:170px;
-    transform:rotate(-90deg);
-}
-
-.ring-bg{
-    fill:none;
-    stroke:rgba(255,255,255,.08);
-    stroke-width:10;
-}
-
-.ring{
-    fill:none;
-    stroke:#22c55e;
-    stroke-width:10;
-    stroke-linecap:round;
-    stroke-dasharray:326.7;
-    stroke-dashoffset:326.7;
-    transition:.6s ease;
-}
-
-.percent{
-    position:absolute;
-    font-size:32px;
-    font-weight:700;
-    color:#fff;
-    user-select:none;
-}
 
 .topbar {
   position: relative;
@@ -907,7 +870,17 @@ html[data-theme="light"] .os-card{
     -webkit-backdrop-filter: blur(28px);
 }
 
-
+.metric {
+  min-height: 86px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  text-align: right;
+  overflow: hidden;
+}
 
 .stat-top {
   display: flex;
@@ -2115,98 +2088,22 @@ html[data-perf="lite"] #support-btn.alert-active {
         <div class="detail-grid" id="details"></div>
       </section>
 
-   <section class="panel usage glass">
-
-    <!-- کارت‌های دایره‌ای -->
-    <div class="rings-grid">
-
-        <!-- حجم باقی‌مانده -->
-        <article class="ring-card" id="ring-data-card">
-            <span class="ring-title">
-                <span class="stat-icon tone-good">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M6 20V9M12 20V4M18 20v-7"></path>
-                    </svg>
-                </span>
-                حجم باقی‌مانده
-            </span>
-
-            <div class="ring-wrap">
-                <svg viewBox="0 0 200 200">
-                    <circle class="ring-dots" cx="100" cy="100" r="95"/>
-                    <circle class="ring-track" cx="100" cy="100" r="84"/>
-                    <circle class="ring-fill" id="ring-data" cx="100" cy="100" r="84"/>
-                </svg>
-
-                <span class="ring-center">
-                    <span class="ring-value" id="ring-data-value">—</span>
-                    <span class="ring-unit">باقی‌مانده</span>
-                </span>
-            </div>
-
-            <span class="ring-foot" id="ring-data-foot">—</span>
-        </article>
-
-        <!-- VPN -->
-        <article class="ring-card vpn-card" id="ring-vpn-card">
-
-            <span class="ring-title">
-                <span class="stat-icon tone-info">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z"/>
-                    </svg>
-                </span>
-                وضعیت VPN
-            </span>
-
-            <div class="ring-wrap">
-                <svg viewBox="0 0 200 200">
-
-                    <defs>
-                        <linearGradient id="vpnGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#00D4FF"/>
-                            <stop offset="100%" stop-color="#8A2BE2"/>
-                        </linearGradient>
-                    </defs>
-
-                    <circle class="ring-dots" cx="100" cy="100" r="95"/>
-                    <circle class="ring-track" cx="100" cy="100" r="84"/>
-                    <circle class="ring-fill vpn-fill" id="ring-vpn" cx="100" cy="100" r="84"/>
-
-                </svg>
-
-                <span class="ring-center">
-                    <span class="ring-value" id="ring-vpn-value">0%</span>
-                    <span class="ring-unit">VPN</span>
-                </span>
-            </div>
-
-            <span class="ring-foot" id="ring-vpn-foot">
-                در حال بررسی...
-            </span>
-
-        </article>
-
-    </div>
-
-    <!-- نمودار مصرف -->
-    <div class="section-head">
-        <div>
+      <section class="panel usage glass">
+        <div class="section-head">
+          <div>
             <h2 class="title" data-i18n="usage">نمودار مصرف</h2>
             <p class="note" id="usage-total">—</p>
+          </div>
+          <div class="range">
+            <button class="range-btn active" type="button" data-range="1d" data-i18n="day">روز</button>
+            <button class="range-btn" type="button" data-range="7d" data-i18n="week">هفته</button>
+          </div>
         </div>
-
-        <div class="range">
-            <button class="range-btn active" type="button" data-range="1d">روز</button>
-            <button class="range-btn" type="button" data-range="7d">هفته</button>
-        </div>
+        <div class="chart" id="chart"><div class="empty" data-i18n="noUsage">آماری برای نمایش نیست</div></div>
+      </section>
     </div>
+  </section>
 
-    <div class="chart" id="chart">
-        <div class="empty">آماری برای نمایش نیست</div>
-    </div>
-
-</section>
   <section class="view" id="view-configs">
     <section class="panel glass">
       <div class="section-head">
@@ -2294,7 +2191,7 @@ html[data-perf="lite"] #support-btn.alert-active {
   var CONFIG = window.PASARGUARD_CONFIG || window.PANEL_USER_CONFIG || {};
 
   var state = {
-    lang: localStorage.getItem(LS.lang) || "فا",
+    lang: localStorage.getItem(LS.lang) || "fa",
     theme: localStorage.getItem(LS.theme) || "dark",
     ctx: null,
     user: null,
@@ -2313,7 +2210,7 @@ html[data-perf="lite"] #support-btn.alert-active {
   };
 
   var L = {
-    فا: {
+    fa: {
       account: "حساب کاربری",
       configs: "کانفیگ‌های شما",
       apps: "اپلیکیشن‌ها",
