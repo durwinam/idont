@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# PGClock Installer for Pasarguard
+# idont Installer for Pasarguard
 # https://github.com/durwinam/idont
 #
 set -euo pipefail
@@ -494,16 +494,6 @@ main() {
 
     case "$choice" in
       1)
-        install_lite
-        edition="PGClock Lite"
-        break
-        ;;
-      2)
-        install_standard
-        edition="PGClock"
-        break
-        ;;
-      3)
         install_pro
         edition="idont"
         break
@@ -513,7 +503,7 @@ main() {
         exit 0
         ;;
       *)
-        warn "Invalid choice. Please enter a number from 0 to 3."
+        warn "Invalid choice. Please enter a number from 0 to 1."
         log_blank
         ;;
     esac
