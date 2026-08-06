@@ -311,6 +311,43 @@ input {
   background: linear-gradient(145deg, rgba(255,255,255,0.09) 0%, transparent 42%);
   pointer-events: none;
 }
+    .vpn-card{
+    width:220px;
+    height:220px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.progress-ring{
+    width:170px;
+    height:170px;
+    transform:rotate(-90deg);
+}
+
+.ring-bg{
+    fill:none;
+    stroke:rgba(255,255,255,.08);
+    stroke-width:10;
+}
+
+.ring{
+    fill:none;
+    stroke:#22c55e;
+    stroke-width:10;
+    stroke-linecap:round;
+    stroke-dasharray:326.7;
+    stroke-dashoffset:326.7;
+    transition:.6s ease;
+}
+
+.percent{
+    position:absolute;
+    font-size:32px;
+    font-weight:700;
+    color:#fff;
+    user-select:none;
+}
 
 .topbar {
   position: relative;
