@@ -162,11 +162,11 @@ body {
   padding: max(38px, env(safe-area-inset-top)) 26px var(--page-bottom);
   color: var(--ink);
 
-  /* Dark Theme (همان قبلی) */
+  /* Dark Theme */
   background:
-    radial-gradient(circle at 18% 15%, rgba(120,81,255,.12) 0%, transparent 28%),
-    radial-gradient(circle at 85% 18%, rgba(0,170,255,.08) 0%, transparent 25%),
-    radial-gradient(circle at 50% 100%, rgba(90,70,255,.08) 0%, transparent 35%),
+    radial-gradient(circle at 18% 15%, rgba(120,81,255,.14) 0%, transparent 30%),
+    radial-gradient(circle at 85% 18%, rgba(0,170,255,.10) 0%, transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(90,70,255,.10) 0%, transparent 38%),
     linear-gradient(180deg,#050B16 0%,#0A1223 30%,#0F1830 65%,#111B34 100%);
 
   font-family: "Vazirmatn",-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
@@ -176,75 +176,150 @@ body {
   overflow-x: hidden;
 }
 
-/* فقط تم لایت */
+
+/* ===========================
+   LIGHT THEME
+   =========================== */
+
 html[data-theme="light"] body{
+
   background:
-    radial-gradient(circle at 5% 20%, rgba(255,105,180,.42) 0%, transparent 35%),
-    radial-gradient(circle at 75% 40%, rgba(0,200,255,.30) 0%, transparent 35%),
-    radial-gradient(circle at 100% 100%, rgba(255,185,80,.35) 0%, transparent 35%),
-    linear-gradient(135deg,#eef4ff 0%,#edf2ff 45%,#f8fbff 100%);
+
+    radial-gradient(circle at 8% 18%, rgba(255,85,180,.60) 0%, transparent 36%),
+
+    radial-gradient(circle at 78% 20%, rgba(0,205,255,.52) 0%, transparent 36%),
+
+    radial-gradient(circle at 92% 88%, rgba(255,190,70,.48) 0%, transparent 34%),
+
+    radial-gradient(circle at 35% 75%, rgba(124,58,237,.32) 0%, transparent 34%),
+
+    radial-gradient(circle at 55% 35%, rgba(34,211,238,.20) 0%, transparent 32%),
+
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #eef5ff 40%,
+      #f3f8ff 70%,
+      #fbfdff 100%
+    );
+
 }
+
 
 body::before {
+
   content: "";
+
   position: fixed;
+
   inset: -30%;
+
   z-index: -2;
+
   pointer-events: none;
 
   background:
-    radial-gradient(circle at 20% 20%, rgba(0,170,255,.22), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(124,58,237,.20), transparent 35%),
-    radial-gradient(circle at 35% 80%, rgba(0,229,255,.18), transparent 35%),
-    radial-gradient(circle at 70% 75%, rgba(90,70,255,.18), transparent 35%);
+
+    radial-gradient(circle at 20% 20%, rgba(0,170,255,.24), transparent 35%),
+
+    radial-gradient(circle at 80% 30%, rgba(124,58,237,.22), transparent 35%),
+
+    radial-gradient(circle at 35% 80%, rgba(0,229,255,.20), transparent 35%),
+
+    radial-gradient(circle at 70% 75%, rgba(90,70,255,.20), transparent 35%);
+
+  filter: blur(95px);
+
+  animation: auroraMove 25s ease-in-out infinite alternate;
+
+}
+
+
+/* ===========================
+   LIGHT AURORA
+   =========================== */
+
+html[data-theme="light"] body::before{
+
+  background:
+
+    radial-gradient(circle at 8% 18%, rgba(255,95,185,.70), transparent 35%),
+
+    radial-gradient(circle at 75% 22%, rgba(0,210,255,.62), transparent 36%),
+
+    radial-gradient(circle at 92% 90%, rgba(255,190,70,.58), transparent 35%),
+
+    radial-gradient(circle at 35% 72%, rgba(124,58,237,.38), transparent 34%),
+
+    radial-gradient(circle at 58% 45%, rgba(34,211,238,.28), transparent 34%);
 
   filter: blur(90px);
-  animation: auroraMove 25s ease-in-out infinite alternate;
+
 }
 
-/* فقط تم لایت */
-html[data-theme="light"] body::before{
-  background:
-    radial-gradient(circle at 8% 18%, rgba(255,110,190,.40), transparent 35%),
-    radial-gradient(circle at 72% 42%, rgba(0,210,255,.32), transparent 35%),
-    radial-gradient(circle at 100% 95%, rgba(255,185,80,.35), transparent 35%);
-}
 
 body::after {
+
   content: "";
+
   position: fixed;
+
   inset: 0;
+
   z-index: -1;
+
   pointer-events: none;
 
   background:
+
     radial-gradient(circle at 25% 25%, rgba(0,229,255,.08), transparent 35%),
+
     radial-gradient(circle at 75% 70%, rgba(124,58,237,.08), transparent 35%);
 
   filter: blur(70px);
+
 }
 
-/* فقط تم لایت */
+
+/* ===========================
+   LIGHT GLOW
+   =========================== */
+
 html[data-theme="light"] body::after{
+
   background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,.55), transparent 60%);
+
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.30), transparent 60%),
+
+    radial-gradient(circle at 20% 30%, rgba(255,90,180,.14), transparent 45%),
+
+    radial-gradient(circle at 82% 28%, rgba(0,210,255,.14), transparent 45%),
+
+    radial-gradient(circle at 88% 88%, rgba(255,190,70,.14), transparent 40%);
+
 }
+
 
 @keyframes auroraMove {
-  0% {
-    transform: translate(-8%, -6%) scale(1);
+
+  0%{
+    transform:translate(-8%,-6%) scale(1);
   }
-  25% {
-    transform: translate(6%, -3%) scale(1.08);
+
+  25%{
+    transform:translate(6%,-3%) scale(1.08);
   }
-  50% {
-    transform: translate(8%, 5%) scale(1.15);
+
+  50%{
+    transform:translate(8%,5%) scale(1.15);
   }
-  75% {
-    transform: translate(-5%, 8%) scale(1.1);
+
+  75%{
+    transform:translate(-5%,8%) scale(1.10);
   }
-  100% {
-    transform: translate(-8%, -6%) scale(1);
+
+  100%{
+    transform:translate(-8%,-6%) scale(1);
   }
 }
 
@@ -482,7 +557,7 @@ html[dir="ltr"] #support-btn { order: 1; }
 html[dir="ltr"] #theme-btn { order: 2; }
 html[dir="ltr"] #lang-btn { order: 3; }
 
-/* ===== حالت پیش‌فرض (دارک) ===== */
+/* =====Default Theme (Dark)===== */
 
 .icon-btn,
 .small-btn,
@@ -557,7 +632,7 @@ html[dir="ltr"] #lang-btn { order: 3; }
     transform:translateY(-2px);
 }
 
-/* ===== فقط تم لایت ===== */
+/* ===== Light Theme ===== */
 
 html[data-theme="light"] .icon-btn,
 html[data-theme="light"] .small-btn,
@@ -1014,7 +1089,7 @@ text-shadow:0 0 8px rgba(255,255,255,.35),0 0 18px rgba(124,58,237,.55),0 0 40px
 
     transition: .25s ease;
 
-    /* دارک (پیش‌فرض) */
+    /* Default Theme (Dark) */
     background: rgba(24,32,48,.38);
 
     border: 1px solid rgba(255,255,255,.14);
@@ -1026,7 +1101,7 @@ text-shadow:0 0 8px rgba(255,255,255,.35),0 0 18px rgba(124,58,237,.55),0 0 40px
     transform: translateY(-3px);
 }
 
-/* فقط تم لایت */
+/* Light Theme */
 
 html[data-theme="light"] .detail,
 html[data-theme="light"] .config-card,
