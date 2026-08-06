@@ -816,23 +816,75 @@ html[dir="rtl"] body[data-view-dir="prev"][data-view="apps"] #view-apps {
 }
 
 .chip {
+
   min-height: 28px;
   max-width: 100%;
+
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
+
   gap: 6px;
+
   padding: 0 9px;
-  border: var(--border);
+
   border-radius: 999px;
-  color: var(--muted);
-  background: var(--chip-bg);
+
   font-size: 11px;
   font-weight: 620;
+
+  color: var(--muted);
+
   min-width: 0;
+
   overflow: hidden;
-  text-overflow: ellipsis;
+
+  text-overflow: clip;
+
   white-space: nowrap;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition: .25s ease;
+}
+
+
+/* =====================
+   DARK GLASS
+   ===================== */
+
+[data-theme="dark"] .chip {
+
+  background: rgba(255,255,255,.08);
+
+  border: 1px solid rgba(255,255,255,.14);
+
+  color: #e5e7eb;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.25),
+    inset 0 1px rgba(255,255,255,.12);
+}
+
+
+
+/* =====================
+   LIGHT GLASS
+   ===================== */
+
+[data-theme="light"] .chip {
+
+  background: rgba(255,255,255,.60);
+
+  border: 1px solid rgba(15,23,42,.10);
+
+  color: #475569;
+
+  box-shadow:
+    0 6px 18px rgba(15,23,42,.08),
+    inset 0 1px rgba(255,255,255,.80);
 }
 
 .chip.status-active {
